@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/chastikov/techno_park/AIAP/Ray cast/src/gamewindow.cpp
+iostream
+-
+vector
+-
+cstdint
+-
+cassert
+-
+gamewindow.h
+/home/chastikov/techno_park/AIAP/Ray cast/src/gamewindow.h
+ppm_utils.h
+/home/chastikov/techno_park/AIAP/Ray cast/src/ppm_utils.h
+

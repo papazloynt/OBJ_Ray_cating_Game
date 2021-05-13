@@ -1,0 +1,2 @@
+/usr/bin/ar qc libray_cast.a CMakeFiles/ray_cast.dir/src/gamewindow.cpp.o CMakeFiles/ray_cast.dir/src/map.cpp.o CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.o CMakeFiles/ray_cast.dir/src/textures.cpp.o
+/usr/bin/ranlib libray_cast.a

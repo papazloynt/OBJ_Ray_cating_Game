@@ -5,8 +5,8 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "../soft/stb_image.h"
 
-#include "ppm_utils.h"
-#include "textures.h"
+#include "../include/ppm_utils.h"
+#include "../include/textures.h"
 
 WallTexture::WallTexture(const std::string filename) : img_w(0), img_h(0), count(0), size(0), img() {
     int nchannels = -1, w, h;
@@ -39,7 +39,7 @@ WallTexture::WallTexture(const std::string filename) : img_w(0), img_h(0), count
             uint8_t g = pixmap[(i+j*w)*4+1];
             uint8_t b = pixmap[(i+j*w)*4+2];
             uint8_t a = pixmap[(i+j*w)*4+3];
-            img[i+j*w] = pack_color(r, g, b, a);
+            img[i+j*w] = ppm::pack_color(r, g, b, a);
         }
     }
     stbi_image_free(pixmap);

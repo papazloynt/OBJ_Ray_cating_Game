@@ -3,11 +3,11 @@
 #include <cstdint>
 #include <cassert>
 
-#include "gamewindow.h"
-#include "ppm_utils.h"
+#include "../include/gamewindow.h"
+#include "../include/ppm_utils.h"
 
 
-GameWindow::GameWindow(size_t _w, wize_t _h, std::vector<uint32_t> _img) : w(_w), h(_h), img(_img) {}
+GameWindow::GameWindow(size_t _w, size_t _h, std::vector<uint32_t> _img) : w(_w), h(_h), img(_img) {}
 
 void GameWindow::set_pixel(const size_t x, const size_t y, const uint32_t color) {
     assert(img.size()==w*h && x<w && y<h);

@@ -8,7 +8,7 @@ struct GameWindow {
     size_t w, h;
     std::vector<uint32_t> img;
 
-    GameWindow(size_t _w, wize_t _h, std::vector<uint32_t> _img);
+    GameWindow(size_t _w, size_t _h, std::vector<uint32_t> _img);
     ~GameWindow() = default;
 
     void clear(const uint32_t color);

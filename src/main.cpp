@@ -8,12 +8,11 @@
 #include <sstream>
 #include <iomanip>
 
-#include "example/Map.h"
-#include "example/utils.h"
-#include "example/Player.h"
-#include "example/sprite.h"
-#include "example/framebuffer.h"
-#include "example/textures.h"
+#include "../include/map.h"
+#include "../include/ppm_utils.h"
+#include "../include/player.h"
+#include "../include/gamewindow.h"
+#include "../include/textures.h"
 
 
 int wall_x_texcoord(const float x, const float y, WallTexture &tex_walls) {
@@ -29,8 +28,8 @@ int wall_x_texcoord(const float x, const float y, WallTexture &tex_walls) {
 }
 
 
-void render(GameWindow &gw, Map &map, Player &player, Texture &tex_walls) {
-    gw.clear(pack_color(255, 255, 255));
+void render(GameWindow &gw, Map &map, Player &player, WallTexture &tex_walls) {
+    gw.clear(ppm::pack_color(255, 255, 255));
     const size_t rect_w = gw.w/(map.w*2);
     const size_t rect_h = gw.h/map.h;
     for (size_t j=0; j<map.h; j++) {  // Рисуем карту
@@ -49,7 +48,7 @@ void render(GameWindow &gw, Map &map, Player &player, Texture &tex_walls) {
         for (float t=0; t<20; t+=.01) { // размер луча
             float x = player.x + t*cos(angle);
             float y = player.y + t*sin(angle);
-            gw.set_pixel(x*rect_w, y*rect_h, pack_color(160, 160, 160)); // Видимые стены
+            gw.set_pixel(x*rect_w, y*rect_h, ppm::pack_color(160, 160, 160)); // Видимые стены
 
             if (map.is_empty(x, y)) continue;
 
@@ -76,7 +75,7 @@ void render(GameWindow &gw, Map &map, Player &player, Texture &tex_walls) {
 
 
 int main() {
-    GameWindow gw{1024, 512, std::vector<uint32_t>(1024*512, pack_color(255, 255, 255))};
+    GameWindow gw{1024, 512, std::vector<uint32_t>(1024*512, ppm::pack_color(255, 255, 255))};
     Player player{3.456, 2.345, 1.523, M_PI/3.};
     Map map;
 
@@ -91,7 +90,7 @@ int main() {
         ss << std::setfill('0') << std::setw(5) << frame << ".ppm";
         player.a += 2*M_PI/360;
         render(gw, map, player, tex_walls);
-        drop_ppm_image(ss.str(), gw.img, gw.w, gw.h);
+        ppm::create_ppm_image(ss.str(), gw.img, gw.w, gw.h);
     }
 
     return 0;

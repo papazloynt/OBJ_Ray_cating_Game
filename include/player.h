@@ -2,7 +2,8 @@
 #define PLAYER_H
 
 struct Player {
-    float x, y; // координаты
+    float x; // координаты
+    float y;
     float a;    // Угол относительно оси Ox
     float fov;  // Обзор
 };

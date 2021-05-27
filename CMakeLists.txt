@@ -1,13 +1,17 @@
-cmake_minimum_required(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.8)
 project(RayCast)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -Wall -ggdb3 ")
+
+
+#[[
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/soft/third_party/SFML")
+]]
 
 add_library(ray_cast STATIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/gamewindow.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/map.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/ppm_utils.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/textures.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 
 target_include_directories(ray_cast PRIVATE
         ${CMAKE_CURRENT_BINARY_DIR}/include

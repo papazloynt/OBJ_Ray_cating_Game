@@ -2,7 +2,8 @@
 #define TEXTURES_H
 
 struct WallTexture {
-    size_t img_w, img_h;
+    size_t img_w;
+    size_t img_h;
     size_t count, size;  // число текстур и размер их в пикселях
     std::vector<uint32_t> img; // Хранилище текстур
 

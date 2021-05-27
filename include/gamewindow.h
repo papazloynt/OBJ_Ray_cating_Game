@@ -5,7 +5,8 @@
 #include <vector>
 
 struct GameWindow {
-    size_t w, h;
+    size_t w;
+    size_t h;
     std::vector<uint32_t> img;
 
     GameWindow(size_t _w, size_t _h, std::vector<uint32_t> _img);

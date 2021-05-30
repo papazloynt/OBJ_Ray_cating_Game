@@ -1,7 +1,7 @@
 // private headers
 #include "render.h"
 
-// c++ headerswwwwwwwwww
+// c++ headers
 #include <cmath>
 #include <vector>
 
@@ -53,7 +53,7 @@ int main() {
             }
         }
 
-        player.a += float(player.turn)*.05;
+        player.a += float(player.turn) * 0.05;
         float nx = player.x + player.walk*cos(player.a)*.1;
         float ny = player.y + player.walk*sin(player.a)*.1;
 

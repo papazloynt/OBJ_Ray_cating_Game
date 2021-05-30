@@ -6,6 +6,7 @@
 #include "player.h"
 #include "ppm_utils.h"
 #include "textures.h"
+#include "back_ground.h"
 
 // c++ headers
 #include <iostream>
@@ -17,14 +18,6 @@ namespace Walls{
 
     void ray_cast(GameWindow &gw, Map &map, Player &player, WallTexture &tex_walls,
                   std::vector<float>& d_b, const size_t rect_w, const size_t rect_h, const int size);
-
-
-
-
-
-
-
-
 }
 
 #endif //RAYCAST_ALGORITHMS_H

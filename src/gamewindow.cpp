@@ -1,20 +1,19 @@
-#include <iostream>
+// private headers
+#include "gamewindow.h"
+#include "ppm_utils.h"
+
+// c++ headers
 #include <vector>
-#include <cstdint>
 #include <cassert>
 
-#include "../include/gamewindow.h"
-#include "../include/ppm_utils.h"
+GameWindow::GameWindow(size_t _w, size_t _h, std::vector<Pixel> _img) : w(_w), h(_h), img(_img) {}
 
-
-GameWindow::GameWindow(size_t _w, size_t _h, std::vector<uint32_t> _img) : w(_w), h(_h), img(_img) {}
-
-void GameWindow::set_pixel(const size_t x, const size_t y, const uint32_t color) {
+void GameWindow::set_pixel(const size_t x, const size_t y, const Pixel color) {
     assert(img.size()==w*h && x<w && y<h);
     img[x+y*w] = color;
 }
 
-void GameWindow::draw_rectangle(const size_t rect_x, const size_t rect_y, const size_t rect_w, const size_t rect_h, const uint32_t color) {
+void GameWindow::draw_rectangle(const size_t rect_x, const size_t rect_y, const size_t rect_w, const size_t rect_h, const Pixel color) {
     assert(img.size()==w*h);
     for (size_t i=0; i<rect_w; i++) {
         for (size_t j=0; j<rect_h; j++) {
@@ -26,6 +25,6 @@ void GameWindow::draw_rectangle(const size_t rect_x, const size_t rect_y, const 
     }
 }
 
-void GameWindow::clear(const uint32_t color) {
+void GameWindow::clear(const Pixel color) {
     img = std::vector<uint32_t>(w*h, color);
 }

@@ -6,6 +6,8 @@ struct Player {
     float y;
     float a;    // Угол относительно оси Ox
     float fov;  // Обзор
+    int turn;
+    int walk;
 };
 
 #endif // PLAYER_H

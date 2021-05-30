@@ -1,7 +1,7 @@
 #ifndef SPRITE_H
 #define SPRITE_H
-
-#include <cstdlib>
+// c++ headers
+#include <iostream>
 
 struct Sprite {
     float x;

@@ -1,7 +1,6 @@
 #ifndef MAP_H
 #define MAP_H
-
-#include <cstdlib>
+// c++ headers
 #include <string>
 
 struct Map {

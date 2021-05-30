@@ -4,4 +4,5 @@
 #include <iostream>
 
 typedef uint32_t Pixel;
+
 #endif //RAYCAST_CONFIG_H

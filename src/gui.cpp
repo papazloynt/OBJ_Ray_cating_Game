@@ -65,8 +65,14 @@ int main() {
 
         render(gw, map, player, sprites, tex_walls, tex_monst);
         for(auto s : sprites){
-            if (s.sprite.player_dist < 0.2){
-                return -1;
+            if (s.sprite.player_dist < 0.5){
+                player.x = 4.27;
+                player.y = 2.345;
+                player.a = 1.523;
+                player.fov = M_PI/3.;
+                player.turn = 0;
+                player.walk = 0;
+                render(gw, map, player, sprites, tex_walls, tex_monst);
             }
         }
         SDL_UpdateTexture(framebuffer_texture, NULL, reinterpret_cast<void *>(gw.img.data()), gw.w*4);

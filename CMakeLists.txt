@@ -12,7 +12,6 @@ string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 
-
 add_library(ray_cast STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/gamewindow.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/map.cpp

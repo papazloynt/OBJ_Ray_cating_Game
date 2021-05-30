@@ -9,7 +9,7 @@
 struct GameWindow {
     size_t w;
     size_t h;
-    std::vector<uint32_t> img;
+    std::vector<Pixel> img;
 
     GameWindow(size_t _w, size_t _h, std::vector<Pixel> _img);
     ~GameWindow() = default;

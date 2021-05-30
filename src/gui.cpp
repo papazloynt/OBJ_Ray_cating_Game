@@ -4,9 +4,33 @@
 // c++ headers
 #include <cmath>
 #include <vector>
+#include <thread>
+#include <mutex>
+#include <chrono>
 
 // SDL
 #include "SDL.h"
+
+std::mutex _mutex;
+[[noreturn]] void movement_sprite(std::vector<SpriteDrawing>& sprites){
+    float a = 1;
+    while (true) {
+        for (auto& s : sprites){
+            _mutex.lock();
+            if (s.sprite.y < 13.5 && s.sprite.y > 1.5) {
+                s.sprite.y += a;
+            } else if (s.sprite.y >= 13.5){
+                a = -1;
+                s.sprite.y += a;
+            } else if (s.sprite.y <= 1.5) {
+                a = 1;
+                s.sprite.y += a;
+            }
+            _mutex.unlock();
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        }
+    }
+}
 
 int main() {
     GameWindow gw{1024, 512, std::vector<uint32_t>(1024*512, ppm::pack_color(255, 255, 255))};
@@ -20,7 +44,7 @@ int main() {
         std::cerr << "Failed to load textures" << std::endl;
         return -1;
     }
-    std::vector<SpriteDrawing> sprites{  Sprite{1.834, 8.765, 0, 0}, Sprite{5.323, 5.365, 1, 0}, Sprite{4.123, 10.265, 1, 0} };
+    std::vector<SpriteDrawing> sprites{  Sprite{1.8, 2, 0, 0}  };
 
     SDL_Window   *window   = nullptr;
     SDL_Renderer *renderer = nullptr;
@@ -38,6 +62,8 @@ int main() {
     SDL_Texture *framebuffer_texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ABGR8888, SDL_TEXTUREACCESS_STREAMING, gw.w, gw.h);
 
     SDL_Event event;
+    std::thread thr(movement_sprite, std::ref(sprites));
+    thr.detach();
     while (true) {
         if (SDL_PollEvent(&event)) {
             if (SDL_QUIT==event.type || (SDL_KEYDOWN==event.type && SDLK_ESCAPE==event.key.keysym.sym)) break;
@@ -64,7 +90,8 @@ int main() {
         }
 
         render(gw, map, player, sprites, tex_walls, tex_monst);
-        for(auto s : sprites){
+
+        for (auto s : sprites){
             if (s.sprite.player_dist < 0.5){
                 player.x = 4.27;
                 player.y = 2.345;

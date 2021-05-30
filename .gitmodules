@@ -1,3 +1,1 @@
-[submodule "soft/third_party/SFML"]
-	path = soft/third_party/SFML
-	url = git@github.com:SFML/SFML.git
+

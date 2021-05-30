@@ -11,8 +11,6 @@ struct Sprite {
     bool operator < (const Sprite& s) const;
 };
 
-bool Sprite::operator < (const Sprite& s) const {
-    return player_dist > s.player_dist;
-}
+
 
 #endif // SPRITE_H

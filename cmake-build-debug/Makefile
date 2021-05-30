@@ -155,6 +155,60 @@ ray_cast/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/build
 .PHONY : ray_cast/fast
 
+src/algorithms.o: src/algorithms.cpp.o
+
+.PHONY : src/algorithms.o
+
+# target to build an object file
+src/algorithms.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/algorithms.cpp.o
+.PHONY : src/algorithms.cpp.o
+
+src/algorithms.i: src/algorithms.cpp.i
+
+.PHONY : src/algorithms.i
+
+# target to preprocess a source file
+src/algorithms.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/algorithms.cpp.i
+.PHONY : src/algorithms.cpp.i
+
+src/algorithms.s: src/algorithms.cpp.s
+
+.PHONY : src/algorithms.s
+
+# target to generate assembly for a file
+src/algorithms.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/algorithms.cpp.s
+.PHONY : src/algorithms.cpp.s
+
+src/back_ground.o: src/back_ground.cpp.o
+
+.PHONY : src/back_ground.o
+
+# target to build an object file
+src/back_ground.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/back_ground.cpp.o
+.PHONY : src/back_ground.cpp.o
+
+src/back_ground.i: src/back_ground.cpp.i
+
+.PHONY : src/back_ground.i
+
+# target to preprocess a source file
+src/back_ground.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/back_ground.cpp.i
+.PHONY : src/back_ground.cpp.i
+
+src/back_ground.s: src/back_ground.cpp.s
+
+.PHONY : src/back_ground.s
+
+# target to generate assembly for a file
+src/back_ground.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/back_ground.cpp.s
+.PHONY : src/back_ground.cpp.s
+
 src/gamewindow.o: src/gamewindow.cpp.o
 
 .PHONY : src/gamewindow.o
@@ -182,32 +236,32 @@ src/gamewindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/gamewindow.cpp.s
 .PHONY : src/gamewindow.cpp.s
 
-src/main.o: src/main.cpp.o
+src/gui.o: src/gui.cpp.o
 
-.PHONY : src/main.o
+.PHONY : src/gui.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/images.dir/build.make CMakeFiles/images.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/gui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/images.dir/build.make CMakeFiles/images.dir/src/gui.cpp.o
+.PHONY : src/gui.cpp.o
 
-src/main.i: src/main.cpp.i
+src/gui.i: src/gui.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/gui.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/images.dir/build.make CMakeFiles/images.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/gui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/images.dir/build.make CMakeFiles/images.dir/src/gui.cpp.i
+.PHONY : src/gui.cpp.i
 
-src/main.s: src/main.cpp.s
+src/gui.s: src/gui.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/gui.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/images.dir/build.make CMakeFiles/images.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/gui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/images.dir/build.make CMakeFiles/images.dir/src/gui.cpp.s
+.PHONY : src/gui.cpp.s
 
 src/map.o: src/map.cpp.o
 
@@ -236,6 +290,33 @@ src/map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/map.cpp.s
 .PHONY : src/map.cpp.s
 
+src/map_drawing.o: src/map_drawing.cpp.o
+
+.PHONY : src/map_drawing.o
+
+# target to build an object file
+src/map_drawing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/map_drawing.cpp.o
+.PHONY : src/map_drawing.cpp.o
+
+src/map_drawing.i: src/map_drawing.cpp.i
+
+.PHONY : src/map_drawing.i
+
+# target to preprocess a source file
+src/map_drawing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/map_drawing.cpp.i
+.PHONY : src/map_drawing.cpp.i
+
+src/map_drawing.s: src/map_drawing.cpp.s
+
+.PHONY : src/map_drawing.s
+
+# target to generate assembly for a file
+src/map_drawing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/map_drawing.cpp.s
+.PHONY : src/map_drawing.cpp.s
+
 src/ppm_utils.o: src/ppm_utils.cpp.o
 
 .PHONY : src/ppm_utils.o
@@ -262,6 +343,60 @@ src/ppm_utils.s: src/ppm_utils.cpp.s
 src/ppm_utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.s
 .PHONY : src/ppm_utils.cpp.s
+
+src/render.o: src/render.cpp.o
+
+.PHONY : src/render.o
+
+# target to build an object file
+src/render.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/render.cpp.o
+.PHONY : src/render.cpp.o
+
+src/render.i: src/render.cpp.i
+
+.PHONY : src/render.i
+
+# target to preprocess a source file
+src/render.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/render.cpp.i
+.PHONY : src/render.cpp.i
+
+src/render.s: src/render.cpp.s
+
+.PHONY : src/render.s
+
+# target to generate assembly for a file
+src/render.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/render.cpp.s
+.PHONY : src/render.cpp.s
+
+src/sprite_drawing.o: src/sprite_drawing.cpp.o
+
+.PHONY : src/sprite_drawing.o
+
+# target to build an object file
+src/sprite_drawing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.o
+.PHONY : src/sprite_drawing.cpp.o
+
+src/sprite_drawing.i: src/sprite_drawing.cpp.i
+
+.PHONY : src/sprite_drawing.i
+
+# target to preprocess a source file
+src/sprite_drawing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.i
+.PHONY : src/sprite_drawing.cpp.i
+
+src/sprite_drawing.s: src/sprite_drawing.cpp.s
+
+.PHONY : src/sprite_drawing.s
+
+# target to generate assembly for a file
+src/sprite_drawing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.s
+.PHONY : src/sprite_drawing.cpp.s
 
 src/textures.o: src/textures.cpp.o
 
@@ -300,18 +435,33 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... images"
 	@echo "... ray_cast"
+	@echo "... src/algorithms.o"
+	@echo "... src/algorithms.i"
+	@echo "... src/algorithms.s"
+	@echo "... src/back_ground.o"
+	@echo "... src/back_ground.i"
+	@echo "... src/back_ground.s"
 	@echo "... src/gamewindow.o"
 	@echo "... src/gamewindow.i"
 	@echo "... src/gamewindow.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/gui.o"
+	@echo "... src/gui.i"
+	@echo "... src/gui.s"
 	@echo "... src/map.o"
 	@echo "... src/map.i"
 	@echo "... src/map.s"
+	@echo "... src/map_drawing.o"
+	@echo "... src/map_drawing.i"
+	@echo "... src/map_drawing.s"
 	@echo "... src/ppm_utils.o"
 	@echo "... src/ppm_utils.i"
 	@echo "... src/ppm_utils.s"
+	@echo "... src/render.o"
+	@echo "... src/render.i"
+	@echo "... src/render.s"
+	@echo "... src/sprite_drawing.o"
+	@echo "... src/sprite_drawing.i"
+	@echo "... src/sprite_drawing.s"
 	@echo "... src/textures.o"
 	@echo "... src/textures.i"
 	@echo "... src/textures.s"

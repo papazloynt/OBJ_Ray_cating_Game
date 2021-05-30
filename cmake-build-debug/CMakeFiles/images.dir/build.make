@@ -76,27 +76,27 @@ include CMakeFiles/images.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/images.dir/flags.make
 
-CMakeFiles/images.dir/src/main.cpp.o: CMakeFiles/images.dir/flags.make
-CMakeFiles/images.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/images.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/images.dir/src/main.cpp.o -c "/home/chastikov/techno_park/AIAP/Ray cast/src/main.cpp"
+CMakeFiles/images.dir/src/gui.cpp.o: CMakeFiles/images.dir/flags.make
+CMakeFiles/images.dir/src/gui.cpp.o: ../src/gui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/images.dir/src/gui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/images.dir/src/gui.cpp.o -c "/home/chastikov/techno_park/AIAP/Ray cast/src/gui.cpp"
 
-CMakeFiles/images.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/images.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/chastikov/techno_park/AIAP/Ray cast/src/main.cpp" > CMakeFiles/images.dir/src/main.cpp.i
+CMakeFiles/images.dir/src/gui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/images.dir/src/gui.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/chastikov/techno_park/AIAP/Ray cast/src/gui.cpp" > CMakeFiles/images.dir/src/gui.cpp.i
 
-CMakeFiles/images.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/images.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/chastikov/techno_park/AIAP/Ray cast/src/main.cpp" -o CMakeFiles/images.dir/src/main.cpp.s
+CMakeFiles/images.dir/src/gui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/images.dir/src/gui.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/chastikov/techno_park/AIAP/Ray cast/src/gui.cpp" -o CMakeFiles/images.dir/src/gui.cpp.s
 
 # Object files for target images
 images_OBJECTS = \
-"CMakeFiles/images.dir/src/main.cpp.o"
+"CMakeFiles/images.dir/src/gui.cpp.o"
 
 # External object files for target images
 images_EXTERNAL_OBJECTS =
 
-images: CMakeFiles/images.dir/src/main.cpp.o
+images: CMakeFiles/images.dir/src/gui.cpp.o
 images: CMakeFiles/images.dir/build.make
 images: libray_cast.a
 images: CMakeFiles/images.dir/link.txt

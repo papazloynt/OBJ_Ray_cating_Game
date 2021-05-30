@@ -5,7 +5,7 @@
 		<Option title="RayCast"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug"/>
@@ -44,7 +44,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/include"/>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/include"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -67,7 +68,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/include"/>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/include"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -90,8 +92,8 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/include"/>
-					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/soft"/>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/include"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -114,8 +116,8 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/include"/>
-					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/soft"/>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/home/chastikov/techno_park/AIAP/Ray cast/include"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -132,16 +134,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/algorithms.cpp">
+			<Option target="ray_cast"/>
+		</Unit>
+		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/back_ground.cpp">
+			<Option target="ray_cast"/>
+		</Unit>
 		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/gamewindow.cpp">
 			<Option target="ray_cast"/>
 		</Unit>
-		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/main.cpp">
+		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/gui.cpp">
 			<Option target="images"/>
 		</Unit>
 		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/map.cpp">
 			<Option target="ray_cast"/>
 		</Unit>
+		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/map_drawing.cpp">
+			<Option target="ray_cast"/>
+		</Unit>
 		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/ppm_utils.cpp">
+			<Option target="ray_cast"/>
+		</Unit>
+		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/render.cpp">
+			<Option target="ray_cast"/>
+		</Unit>
+		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/sprite_drawing.cpp">
 			<Option target="ray_cast"/>
 		</Unit>
 		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/src/textures.cpp">
@@ -149,6 +166,12 @@
 		</Unit>
 		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/../../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
+		</Unit>
+		<Unit filename="/home/chastikov/techno_park/AIAP/Ray cast/../../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

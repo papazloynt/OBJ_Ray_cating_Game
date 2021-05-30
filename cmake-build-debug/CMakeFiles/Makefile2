@@ -100,7 +100,7 @@ CMakeFiles/images.dir/all: CMakeFiles/ray_cast.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/images.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" 7
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/images.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/images.dir/rule
@@ -122,12 +122,12 @@ CMakeFiles/images.dir/clean:
 CMakeFiles/ray_cast.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ray_cast.dir/build.make CMakeFiles/ray_cast.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=3,4,5,6,7 "Built target ray_cast"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=3,4,5,6,7,8,9,10,11,12 "Built target ray_cast"
 .PHONY : CMakeFiles/ray_cast.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ray_cast.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ray_cast.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/ray_cast.dir/rule

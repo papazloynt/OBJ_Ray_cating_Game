@@ -102,9 +102,22 @@ CMakeFiles/ray_cast.dir/src/map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_cast.dir/src/map.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/chastikov/techno_park/AIAP/Ray cast/src/map.cpp" -o CMakeFiles/ray_cast.dir/src/map.cpp.s
 
+CMakeFiles/ray_cast.dir/src/map_drawing.cpp.o: CMakeFiles/ray_cast.dir/flags.make
+CMakeFiles/ray_cast.dir/src/map_drawing.cpp.o: ../src/map_drawing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ray_cast.dir/src/map_drawing.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_cast.dir/src/map_drawing.cpp.o -c "/home/chastikov/techno_park/AIAP/Ray cast/src/map_drawing.cpp"
+
+CMakeFiles/ray_cast.dir/src/map_drawing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ray_cast.dir/src/map_drawing.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/chastikov/techno_park/AIAP/Ray cast/src/map_drawing.cpp" > CMakeFiles/ray_cast.dir/src/map_drawing.cpp.i
+
+CMakeFiles/ray_cast.dir/src/map_drawing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_cast.dir/src/map_drawing.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/chastikov/techno_park/AIAP/Ray cast/src/map_drawing.cpp" -o CMakeFiles/ray_cast.dir/src/map_drawing.cpp.s
+
 CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.o: CMakeFiles/ray_cast.dir/flags.make
 CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.o: ../src/ppm_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.o -c "/home/chastikov/techno_park/AIAP/Ray cast/src/ppm_utils.cpp"
 
 CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.i: cmake_force
@@ -117,7 +130,7 @@ CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.s: cmake_force
 
 CMakeFiles/ray_cast.dir/src/textures.cpp.o: CMakeFiles/ray_cast.dir/flags.make
 CMakeFiles/ray_cast.dir/src/textures.cpp.o: ../src/textures.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ray_cast.dir/src/textures.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ray_cast.dir/src/textures.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_cast.dir/src/textures.cpp.o -c "/home/chastikov/techno_park/AIAP/Ray cast/src/textures.cpp"
 
 CMakeFiles/ray_cast.dir/src/textures.cpp.i: cmake_force
@@ -128,23 +141,85 @@ CMakeFiles/ray_cast.dir/src/textures.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_cast.dir/src/textures.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/chastikov/techno_park/AIAP/Ray cast/src/textures.cpp" -o CMakeFiles/ray_cast.dir/src/textures.cpp.s
 
+CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.o: CMakeFiles/ray_cast.dir/flags.make
+CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.o: ../src/sprite_drawing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.o -c "/home/chastikov/techno_park/AIAP/Ray cast/src/sprite_drawing.cpp"
+
+CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/chastikov/techno_park/AIAP/Ray cast/src/sprite_drawing.cpp" > CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.i
+
+CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/chastikov/techno_park/AIAP/Ray cast/src/sprite_drawing.cpp" -o CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.s
+
+CMakeFiles/ray_cast.dir/src/algorithms.cpp.o: CMakeFiles/ray_cast.dir/flags.make
+CMakeFiles/ray_cast.dir/src/algorithms.cpp.o: ../src/algorithms.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ray_cast.dir/src/algorithms.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_cast.dir/src/algorithms.cpp.o -c "/home/chastikov/techno_park/AIAP/Ray cast/src/algorithms.cpp"
+
+CMakeFiles/ray_cast.dir/src/algorithms.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ray_cast.dir/src/algorithms.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/chastikov/techno_park/AIAP/Ray cast/src/algorithms.cpp" > CMakeFiles/ray_cast.dir/src/algorithms.cpp.i
+
+CMakeFiles/ray_cast.dir/src/algorithms.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_cast.dir/src/algorithms.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/chastikov/techno_park/AIAP/Ray cast/src/algorithms.cpp" -o CMakeFiles/ray_cast.dir/src/algorithms.cpp.s
+
+CMakeFiles/ray_cast.dir/src/render.cpp.o: CMakeFiles/ray_cast.dir/flags.make
+CMakeFiles/ray_cast.dir/src/render.cpp.o: ../src/render.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ray_cast.dir/src/render.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_cast.dir/src/render.cpp.o -c "/home/chastikov/techno_park/AIAP/Ray cast/src/render.cpp"
+
+CMakeFiles/ray_cast.dir/src/render.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ray_cast.dir/src/render.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/chastikov/techno_park/AIAP/Ray cast/src/render.cpp" > CMakeFiles/ray_cast.dir/src/render.cpp.i
+
+CMakeFiles/ray_cast.dir/src/render.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_cast.dir/src/render.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/chastikov/techno_park/AIAP/Ray cast/src/render.cpp" -o CMakeFiles/ray_cast.dir/src/render.cpp.s
+
+CMakeFiles/ray_cast.dir/src/back_ground.cpp.o: CMakeFiles/ray_cast.dir/flags.make
+CMakeFiles/ray_cast.dir/src/back_ground.cpp.o: ../src/back_ground.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ray_cast.dir/src/back_ground.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_cast.dir/src/back_ground.cpp.o -c "/home/chastikov/techno_park/AIAP/Ray cast/src/back_ground.cpp"
+
+CMakeFiles/ray_cast.dir/src/back_ground.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ray_cast.dir/src/back_ground.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/chastikov/techno_park/AIAP/Ray cast/src/back_ground.cpp" > CMakeFiles/ray_cast.dir/src/back_ground.cpp.i
+
+CMakeFiles/ray_cast.dir/src/back_ground.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_cast.dir/src/back_ground.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/chastikov/techno_park/AIAP/Ray cast/src/back_ground.cpp" -o CMakeFiles/ray_cast.dir/src/back_ground.cpp.s
+
 # Object files for target ray_cast
 ray_cast_OBJECTS = \
 "CMakeFiles/ray_cast.dir/src/gamewindow.cpp.o" \
 "CMakeFiles/ray_cast.dir/src/map.cpp.o" \
+"CMakeFiles/ray_cast.dir/src/map_drawing.cpp.o" \
 "CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.o" \
-"CMakeFiles/ray_cast.dir/src/textures.cpp.o"
+"CMakeFiles/ray_cast.dir/src/textures.cpp.o" \
+"CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.o" \
+"CMakeFiles/ray_cast.dir/src/algorithms.cpp.o" \
+"CMakeFiles/ray_cast.dir/src/render.cpp.o" \
+"CMakeFiles/ray_cast.dir/src/back_ground.cpp.o"
 
 # External object files for target ray_cast
 ray_cast_EXTERNAL_OBJECTS =
 
 libray_cast.a: CMakeFiles/ray_cast.dir/src/gamewindow.cpp.o
 libray_cast.a: CMakeFiles/ray_cast.dir/src/map.cpp.o
+libray_cast.a: CMakeFiles/ray_cast.dir/src/map_drawing.cpp.o
 libray_cast.a: CMakeFiles/ray_cast.dir/src/ppm_utils.cpp.o
 libray_cast.a: CMakeFiles/ray_cast.dir/src/textures.cpp.o
+libray_cast.a: CMakeFiles/ray_cast.dir/src/sprite_drawing.cpp.o
+libray_cast.a: CMakeFiles/ray_cast.dir/src/algorithms.cpp.o
+libray_cast.a: CMakeFiles/ray_cast.dir/src/render.cpp.o
+libray_cast.a: CMakeFiles/ray_cast.dir/src/back_ground.cpp.o
 libray_cast.a: CMakeFiles/ray_cast.dir/build.make
 libray_cast.a: CMakeFiles/ray_cast.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libray_cast.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libray_cast.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ray_cast.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ray_cast.dir/link.txt --verbose=$(VERBOSE)
 

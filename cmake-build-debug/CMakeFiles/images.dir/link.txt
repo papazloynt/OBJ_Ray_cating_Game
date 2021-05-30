@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/images.dir/src/main.cpp.o -o images  libray_cast.a 
+/usr/bin/c++  -pedantic -Werror -Wall -Wextra -Wno-unused-command-line-argument -Wshadow -Wnon-virtual-dtor -g CMakeFiles/images.dir/src/gui.cpp.o -o images  libray_cast.a -lSDL2 -lpthread 

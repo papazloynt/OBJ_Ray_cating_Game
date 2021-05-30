@@ -84,7 +84,7 @@ int main() {
         float ny = player.y + player.walk*sin(player.a)*.1;
 
 
-        if (int(nx)>=0 && int(nx)<int(map.w) && int(ny)>=0 && int(ny)<int(map.h) && map.is_empty(nx, ny)) {
+        if (int(nx) >= 0 && int(nx) < int(map.w) && int(ny) >= 0 && int(ny) < int(map.h) && map.is_empty(nx, ny)) {
             player.x = nx;
             player.y = ny;
         }

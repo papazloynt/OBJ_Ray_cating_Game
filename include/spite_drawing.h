@@ -18,9 +18,4 @@ struct SpriteDrawing{
     bool operator < (const SpriteDrawing& s) const;
 };
 
-
-
-
-
-
 #endif //RAYCAST_SPITE_DRAWING_H

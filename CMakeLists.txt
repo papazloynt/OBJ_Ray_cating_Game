@@ -16,9 +16,12 @@ include_directories(${SDL2_INCLUDE_DIRS})
 add_library(ray_cast STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/gamewindow.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/map.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/map_drawing.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/ppm_utils.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/textures.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/sprite_drawing.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/sprite_drawing.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/algorithms.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/render.cpp)
 
 target_include_directories(ray_cast PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include)

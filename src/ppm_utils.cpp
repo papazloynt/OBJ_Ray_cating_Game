@@ -6,7 +6,7 @@ namespace  ppm {
         return (a << 24) + (b << 16) + (g << 8) + r;
     }
 
-    void unpack_color(const uint32_t &color, uint8_t &r, uint8_t &g, uint8_t &b, uint8_t &a) {
+    [[maybe_unused]] void unpack_color(const uint32_t &color, uint8_t &r, uint8_t &g, uint8_t &b, uint8_t &a) {
         r = (color >> 0) & 255;
         g = (color >> 8) & 255;
         b = (color >> 16) & 255;

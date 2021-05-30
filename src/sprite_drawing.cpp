@@ -4,6 +4,7 @@
 // c++ headers
 #include <cmath>
 
+
 SpriteDrawing::SpriteDrawing(const Sprite& s) : sprite(s) {}
 
 void SpriteDrawing::map_show_sprite(GameWindow &gw, Map &map) {

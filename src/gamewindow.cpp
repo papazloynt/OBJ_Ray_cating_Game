@@ -25,5 +25,5 @@ void GameWindow::draw_rectangle(const size_t rect_x, const size_t rect_y, const 
 }
 
 void GameWindow::clear(const Pixel color) {
-    img = std::vector<uint32_t>(w*h, color);
+    std::fill(img.begin(), img.end(), color);
 }

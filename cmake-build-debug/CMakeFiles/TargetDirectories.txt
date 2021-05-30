@@ -1,4 +1,0 @@
-/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles/images.dir
-/home/chastikov/techno_park/AIAP/Ray cast/cmake-build-debug/CMakeFiles/ray_cast.dir

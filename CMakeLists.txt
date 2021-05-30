@@ -18,7 +18,7 @@ add_library(ray_cast STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/map.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/ppm_utils.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/textures.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/sprite.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/sprite_drawing.cpp)
 
 target_include_directories(ray_cast PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include)

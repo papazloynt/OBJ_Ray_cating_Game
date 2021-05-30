@@ -4,7 +4,6 @@
 #include "config.h"
 
 // c++ headers
-#include <iostream>
 #include <vector>
 
 struct GameWindow {

@@ -3,7 +3,6 @@
 #include "textures.h"
 
 // c++ headers
-#include <iostream>
 #include <vector>
 #include <cstdint>
 #include <cassert>

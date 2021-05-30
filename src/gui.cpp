@@ -5,18 +5,19 @@
 #include "sprite.h"
 #include "gamewindow.h"
 #include "textures.h"
+#include "config.h"
+#include "spite_drawing.h"
 
 // c++ headers
 #include <algorithm>
 #include <cmath>
-#include <iostream>
 #include <vector>
 #include <cassert>
 
 // SDL
 #include "SDL.h"
 
-int wall_x_texcoord(const float x, const float y, WallTexture &tex_walls) {
+int wall_width_texture_coord(const float x, const float y, WallTexture &tex_walls) {
     float hitx = x - floor(x+.5);
     float hity = y - floor(y+.5);
     int tex = hitx * tex_walls.size;
@@ -28,37 +29,8 @@ int wall_x_texcoord(const float x, const float y, WallTexture &tex_walls) {
     return tex;
 }
 
-void map_show_sprite(Sprite &sprite, GameWindow &gw, Map &map) {
-    const size_t rect_w = gw.w / (map.w * 2); // Размер ячейки одной ячейки карты
-    const size_t rect_h = gw.h / map.h;
-    gw.draw_rectangle(sprite.x * rect_w - 3, sprite.y * rect_h - 3, 6, 6, ppm::pack_color(255, 0, 0)); // Вычитаем 3, т.к. нужно получить левый угол квадратика
-}
 
-void draw_sprite(Sprite &sprite, std::vector<float> &depth_buffer, GameWindow &gw, Player &player, WallTexture &tex_sprites) {
-    // Вычесления для того, чтобы центр спрайта смотрел на главного персонажа
-    float sprite_dir = atan2(sprite.y - player.y, sprite.x - player.x);
-    while (sprite_dir - player.a >  M_PI) sprite_dir -= 2*M_PI; // Чтобы спрайт не смотрел в противоположную сторону, убираем периоды
-    while (sprite_dir - player.a < -M_PI) sprite_dir += 2*M_PI;
-
-    size_t sprite_screen_size = std::min(2000, static_cast<int>(gw.h/sprite.player_dist)); // Размер спрайта ограничим 1000
-    int h_offset = (sprite_dir - player.a)*(gw.w/2)/(player.fov) + (gw.w/2)/2 - tex_sprites.size/2; // т.к. экран на половине
-    int v_offset = gw.h/2 - sprite_screen_size/2;
-
-    for (size_t i=0; i < sprite_screen_size; ++i) {
-        if (h_offset + int(i) < 0 || h_offset + i >= gw.w/2) continue;
-        if (depth_buffer[h_offset+i] < sprite.player_dist) continue; // Столбец спрайта закрыт стеной, не рисуем.
-        for (size_t j = 0; j < sprite_screen_size; ++j) {
-            if (v_offset + int(j) < 0 || v_offset + j >= gw.h) continue;
-            uint32_t color = tex_sprites.get(i*tex_sprites.size/sprite_screen_size, j*tex_sprites.size/sprite_screen_size, sprite.tex_id);
-            uint8_t r,g,b,a;
-            ppm::unpack_color(color, r, g, b, a);
-            if (a>128)
-            gw.set_pixel(gw.w/2 + h_offset+i, v_offset+j, color);
-        }
-    }
-}
-
-void render(GameWindow &gw, Map &map, Player &player, std::vector<Sprite> &sprites, WallTexture &tex_walls, WallTexture &tex_pers) {
+void render(GameWindow &gw, Map &map, Player &player, std::vector<SpriteDrawing> &sprites, WallTexture &tex_walls, WallTexture &tex_pers) {
     gw.clear(ppm::pack_color(255, 255, 255));
     const size_t rect_w = gw.w / (map.w * 2);
     const size_t rect_h = gw.h / map.h;
@@ -88,7 +60,7 @@ void render(GameWindow &gw, Map &map, Player &player, std::vector<Sprite> &sprit
             float dist = .2+t * cos(angle-player.a);
             depth_buffer[i] = dist;
             size_t column_height = gw.h/dist;
-            int x_texcoord = wall_x_texcoord(x, y, tex_walls);
+            int x_texcoord = wall_width_texture_coord(x, y, tex_walls);
             std::vector<uint32_t> column = tex_walls.get_scaled_column(texid, x_texcoord, column_height);
             int pix_x = i + gw.w/2;
 
@@ -103,13 +75,13 @@ void render(GameWindow &gw, Map &map, Player &player, std::vector<Sprite> &sprit
     }
     //Костыль, но он работает.
     for (size_t i = 0; i < sprites.size(); ++i) { // Обновляем расстояние от игрока до каждого спрайта
-        sprites[i].player_dist = std::sqrt(pow(player.x - sprites[i].x, 2) + pow(player.y - sprites[i].y, 2));
+        sprites[i].sprite.player_dist = std::sqrt(pow(player.x - sprites[i].sprite.x, 2) + pow(player.y - sprites[i].sprite.y, 2));
     }
     std::sort(sprites.begin(), sprites.end()); // Сортируем их от дальних, к ближним
 
     for (size_t i = 0; i < sprites.size(); ++i) {
-        map_show_sprite(sprites[i], gw, map);
-        draw_sprite(sprites[i], depth_buffer, gw, player, tex_pers);
+        sprites[i].map_show_sprite(gw, map);
+        sprites[i].draw_sprite(depth_buffer, gw, player, tex_pers);
     }
 }
 
@@ -127,7 +99,7 @@ int main() {
         std::cerr << "Failed to load textures" << std::endl;
         return -1;
     }
-    std::vector<Sprite> sprites{  {1.834, 8.765, 0, 0}, {5.323, 5.365, 1, 0}, {4.123, 10.265, 1, 0} };
+    std::vector<SpriteDrawing> sprites{  Sprite{1.834, 8.765, 0, 0}, Sprite{5.323, 5.365, 1, 0}, Sprite{4.123, 10.265, 1, 0} };
 
     SDL_Window   *window   = nullptr;
     SDL_Renderer *renderer = nullptr;
@@ -172,7 +144,7 @@ int main() {
 
         render(gw, map, player, sprites, tex_walls, tex_monst);
         for(auto s : sprites){
-            if (s.player_dist < 0.3){
+            if (s.sprite.player_dist < 0.3){
                 return -1;
             }
         }
@@ -188,14 +160,6 @@ int main() {
     SDL_DestroyWindow(window);
 
     SDL_Quit();
-
-  /*  for (size_t frame=0; frame<360; frame++) {
-        std::stringstream ss;
-        ss << std::setfill('0') << std::setw(5) << frame << ".ppm";
-        player.a += 2*M_PI/360;
-        render(gw, map, player, sprites, tex_walls, tex_monst);
-        ppm::create_ppm_image(ss.str(), gw.img, gw.w, gw.h);
-    }*/
 
     return 0;
 }

@@ -40,6 +40,22 @@
     }
 }
 
+[[noreturn]] void movement_sprite_line(SpriteDrawing& s){
+    std::mutex _mutex;
+    while (true) {
+        _mutex.lock();
+        while (s.sprite.x < s.max_coord) {
+            s.sprite.x += s.sprite.speed;
+            std::this_thread::sleep_for(std::chrono::milliseconds(5));
+        }
+        while (s.sprite.x > s.min_coord) {
+            s.sprite.x -= s.sprite.speed;
+            std::this_thread::sleep_for(std::chrono::milliseconds(5));
+        }
+        _mutex.unlock();
+    }
+}
+
 int main() {
     GameWindow gw{1024, 512, std::vector<uint32_t>(1024*512, ppm::pack_color(255, 255, 255))};
     Player player{13, 1.7, 3.2, M_PI/3., 0, 0};
@@ -54,7 +70,8 @@ int main() {
         return -1;
     }
     std::vector<SpriteDrawing> sprites{ SpriteDrawing{Sprite{1.4, 9, 0, 0, 0.02},14.4, 1.5},
-                                        SpriteDrawing{Sprite{3.5, 9, 0, 0, 0.01},12, 3.5}};
+                                        SpriteDrawing{Sprite{3.5, 9, 0, 0, 0.01},12.4, 3.4}
+                                        /*SpriteDrawing{Sprite{3.5, 9, 0, 0, 0.01},12.4, 6}*/};
 
     SDL_Window   *window   = nullptr;
     SDL_Renderer *renderer = nullptr;
@@ -73,15 +90,15 @@ int main() {
 
     // Меню и инструкция
     {
-        DrawFonButton menu("../img/start.bmp", "../img/fon.bmp");
+        DrawFonButton menu(Menu, "../img/start.bmp", "../img/fon.bmp");
         menu.draw_static(renderer);
 
-        DrawFonButton instr("../img/start.bmp", "../img/instruction.bmp");
+        DrawFonButton instr(Instraction, "../img/start.bmp", "../img/instruction.bmp");
         instr.draw_static(renderer);
     }
 
     std::vector<std::thread> threads;
-    for (size_t i = 0; i < sprites.size(); ++i){
+    for (size_t i = 0; i < sprites.size() ; ++i){
         threads.emplace_back(movement_sprite_around, std::ref(sprites[i]));
         threads[i].detach();
     }
@@ -118,7 +135,7 @@ int main() {
         for (auto s : sprites) {
             if (s.sprite.player_dist < 0.35){
                 {
-                    DrawFonButton restart("../img/try_again.bmp", "../img/instruction.bmp");
+                    DrawFonButton restart(Instraction, "../img/try_again.bmp", "../img/instruction.bmp");
                     restart.draw_static(renderer);
                 }
                 player.init();
@@ -128,7 +145,7 @@ int main() {
 
         if (player.x >= 7 && player.x <= 9 && player.y >= 3 && player.y <= 3.5){
             {
-                DrawFonButton restart("../img/win.bmp", "../img/instruction.bmp");
+                DrawFonButton restart(Instraction, "../img/win.bmp", "../img/instruction.bmp");
                 restart.draw_static(renderer);
             }
             player.init();

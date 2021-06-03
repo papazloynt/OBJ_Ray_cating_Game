@@ -1,8 +1,8 @@
 //private headers
 #include "draw_fon_button.h"
 
-DrawFonButton::DrawFonButton(const std::string& b_s, const std::string& f_s) :
-                                        button_skin(SDL_LoadBMP(b_s.c_str())),
+DrawFonButton::DrawFonButton(Fon fon_, const std::string& b_s, const std::string& f_s) :
+                                        fon(fon_), button_skin(SDL_LoadBMP(b_s.c_str())),
                                         fon_skin(SDL_LoadBMP(f_s.c_str())) {}
 DrawFonButton::~DrawFonButton() {
         SDL_FreeSurface(button_skin);
@@ -10,7 +10,12 @@ DrawFonButton::~DrawFonButton() {
 }
 
 void DrawFonButton::draw_static(SDL_Renderer* renderer){
-    Button button{ button_skin , { 450, 240, 128, 50 } , { 255, 255, 255, 255} };
+    Button button{button_skin, {450, 240, 128, 50}, {255, 255, 255, 255}};
+    if (fon == Instraction){
+        button.draw_rect = {450, 370, 128, 50};
+    }
+
+
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, fon_skin);
     SDL_RenderClear(renderer);
 

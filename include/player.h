@@ -8,6 +8,7 @@ struct Player {
     float fov;  // Обзор
     int turn;
     int walk;
+    void init();
 };
 
 #endif // PLAYER_H

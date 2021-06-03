@@ -25,7 +25,8 @@ add_library(ray_cast STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/render.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/back_ground.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/button.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/draw_fon_button.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/draw_fon_button.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/player.cpp)
 
 target_include_directories(ray_cast PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include)

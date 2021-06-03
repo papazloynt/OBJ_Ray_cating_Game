@@ -70,17 +70,15 @@ int main() {
     }
 
     SDL_Texture *framebuffer_texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ABGR8888, SDL_TEXTUREACCESS_STREAMING, gw.w, gw.h);
+
+    // Меню и инструкция
     {
-        // Меню
         DrawFonButton menu("../img/start.bmp", "../img/fon.bmp");
         menu.draw_static(renderer);
 
-        //Инструкция
         DrawFonButton instr("../img/start.bmp", "../img/instruction.bmp");
         instr.draw_static(renderer);
     }
-
-    SDL_Event event;
 
     std::vector<std::thread> threads;
     for (size_t i = 0; i < sprites.size(); ++i){
@@ -88,6 +86,7 @@ int main() {
         threads[i].detach();
     }
 
+    SDL_Event event;
     while (true) {
         if (SDL_PollEvent(&event)) {
             if (SDL_QUIT==event.type || (SDL_KEYDOWN==event.type && SDLK_ESCAPE==event.key.keysym.sym)) break;
@@ -113,20 +112,16 @@ int main() {
             player.y = ny;
         }
 
+        // Рендерим то, что есть
         render(gw, map, player, sprites, tex_walls, tex_monst);
 
-        for (auto s : sprites){
+        for (auto s : sprites) {
             if (s.sprite.player_dist < 0.35){
                 {
                     DrawFonButton restart("../img/try_again.bmp", "../img/instruction.bmp");
                     restart.draw_static(renderer);
                 }
-                player.x = 13;
-                player.y = 1.7;
-                player.a = 3.2;
-                player.fov = M_PI/3.;
-                player.turn = 0;
-                player.walk = 0;
+                player.init();
                 render(gw, map, player, sprites, tex_walls, tex_monst);
             }
         }
@@ -136,12 +131,7 @@ int main() {
                 DrawFonButton restart("../img/win.bmp", "../img/instruction.bmp");
                 restart.draw_static(renderer);
             }
-            player.x = 13;
-            player.y = 1.7;
-            player.a = 3.2;
-            player.fov = M_PI/3.;
-            player.turn = 0;
-            player.walk = 0;
+            player.init();
             render(gw, map, player, sprites, tex_walls, tex_monst);
         }
 

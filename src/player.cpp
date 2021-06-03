@@ -1,6 +1,9 @@
 // private headers
 #include "player.h"
 
+// c++ headers
+#include <cmath>
+
 void Player::init() {
     x = 13;
     y = 1.7;

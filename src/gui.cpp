@@ -135,6 +135,7 @@ int main() {
             render(gw, map, player, sprites, tex_walls, tex_monst);
         }
 
+
         SDL_UpdateTexture(framebuffer_texture, NULL, reinterpret_cast<void *>(gw.img.data()), gw.w*4);
 
         SDL_RenderClear(renderer);

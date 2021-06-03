@@ -9,9 +9,11 @@
 #include "ppm_utils.h"
 
 struct SpriteDrawing{
-    SpriteDrawing(const Sprite& s);
+    SpriteDrawing(const Sprite& s, float _max_coord, float _min_coord);
 
     Sprite sprite;
+    float max_coord;
+    float min_coord;
     void map_show_sprite(GameWindow &gw, Map &map);
     void draw_sprite(std::vector<float> &depth_buffer, GameWindow &gw, Player &player, WallTexture &tex_sprites);
 

@@ -5,7 +5,8 @@
 #include <cmath>
 
 
-SpriteDrawing::SpriteDrawing(const Sprite& s) : sprite(s) {}
+SpriteDrawing::SpriteDrawing(const Sprite& s, float _max_coord, float _min_coord) : sprite(s),
+                                                    max_coord(_max_coord), min_coord(_min_coord) {}
 
 void SpriteDrawing::map_show_sprite(GameWindow &gw, Map &map) {
     const size_t rect_w = gw.w / (map.w * 2); // Размер одной ячейки карты

@@ -1,5 +1,6 @@
 // private headers
 #include "render.h"
+#include "draw_fon_button.h"
 
 // c++ headers
 #include <cmath>
@@ -11,30 +12,38 @@
 // SDL
 #include "SDL.h"
 
-std::mutex _mutex;
-[[noreturn]] void movement_sprite(std::vector<SpriteDrawing>& sprites){
-    float a = 1;
+[[noreturn]] void movement_sprite_around(SpriteDrawing& s){
+    std::mutex _mutex;
     while (true) {
-        for (auto& s : sprites){
-            _mutex.lock();
-            if (s.sprite.y < 13.5 && s.sprite.y > 1.5) {
-                s.sprite.y += a;
-            } else if (s.sprite.y >= 13.5){
-                a = -1;
-                s.sprite.y += a;
-            } else if (s.sprite.y <= 1.5) {
-                a = 1;
-                s.sprite.y += a;
-            }
-            _mutex.unlock();
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        _mutex.lock();
+        while (s.sprite.y < s.max_coord) {
+               s.sprite.y += s.sprite.speed;
+            std::this_thread::sleep_for(std::chrono::milliseconds(5));
         }
+        s.sprite.y -= s.sprite.speed;
+        while(s.sprite.x < s.max_coord){
+            s.sprite.x += s.sprite.speed;
+            std::this_thread::sleep_for(std::chrono::milliseconds(5));
+        }
+        s.sprite.x -= s.sprite.speed;
+        while(s.sprite.y > s.min_coord){
+            s.sprite.y -= s.sprite.speed;
+            std::this_thread::sleep_for(std::chrono::milliseconds(5));
+        }
+        s.sprite.y += s.sprite.speed;
+        while(s.sprite.x > s.min_coord){
+            s.sprite.x -= s.sprite.speed;
+            std::this_thread::sleep_for(std::chrono::milliseconds(5));
+        }
+        s.sprite.x += s.sprite.speed;
+        _mutex.unlock();
     }
 }
 
 int main() {
     GameWindow gw{1024, 512, std::vector<uint32_t>(1024*512, ppm::pack_color(255, 255, 255))};
-    Player player{4.27, 2.345, 1.523, M_PI/3., 0, 0};
+    Player player{13, 1.7, 3.2, M_PI/3., 0, 0};
+
     Map map;
 
     WallTexture tex_walls("../img/walltext.bmp", SDL_PIXELFORMAT_ABGR8888);
@@ -44,7 +53,8 @@ int main() {
         std::cerr << "Failed to load textures" << std::endl;
         return -1;
     }
-    std::vector<SpriteDrawing> sprites{  Sprite{1.8, 2, 0, 0}  };
+    std::vector<SpriteDrawing> sprites{ SpriteDrawing{Sprite{1.4, 9, 0, 0, 0.02},14.4, 1.5},
+                                        SpriteDrawing{Sprite{3.5, 9, 0, 0, 0.01},12, 3.5}};
 
     SDL_Window   *window   = nullptr;
     SDL_Renderer *renderer = nullptr;
@@ -60,10 +70,24 @@ int main() {
     }
 
     SDL_Texture *framebuffer_texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ABGR8888, SDL_TEXTUREACCESS_STREAMING, gw.w, gw.h);
+    {
+        // Меню
+        DrawFonButton menu("../img/start.bmp", "../img/fon.bmp");
+        menu.draw_static(renderer);
+
+        //Инструкция
+        DrawFonButton instr("../img/start.bmp", "../img/instruction.bmp");
+        instr.draw_static(renderer);
+    }
 
     SDL_Event event;
-    std::thread thr(movement_sprite, std::ref(sprites));
-    thr.detach();
+
+    std::vector<std::thread> threads;
+    for (size_t i = 0; i < sprites.size(); ++i){
+        threads.emplace_back(movement_sprite_around, std::ref(sprites[i]));
+        threads[i].detach();
+    }
+
     while (true) {
         if (SDL_PollEvent(&event)) {
             if (SDL_QUIT==event.type || (SDL_KEYDOWN==event.type && SDLK_ESCAPE==event.key.keysym.sym)) break;
@@ -92,16 +116,35 @@ int main() {
         render(gw, map, player, sprites, tex_walls, tex_monst);
 
         for (auto s : sprites){
-            if (s.sprite.player_dist < 0.5){
-                player.x = 4.27;
-                player.y = 2.345;
-                player.a = 1.523;
+            if (s.sprite.player_dist < 0.35){
+                {
+                    DrawFonButton restart("../img/try_again.bmp", "../img/instruction.bmp");
+                    restart.draw_static(renderer);
+                }
+                player.x = 13;
+                player.y = 1.7;
+                player.a = 3.2;
                 player.fov = M_PI/3.;
                 player.turn = 0;
                 player.walk = 0;
                 render(gw, map, player, sprites, tex_walls, tex_monst);
             }
         }
+
+        if (player.x >= 7 && player.x <= 9 && player.y >= 3 && player.y <= 3.5){
+            {
+                DrawFonButton restart("../img/win.bmp", "../img/instruction.bmp");
+                restart.draw_static(renderer);
+            }
+            player.x = 13;
+            player.y = 1.7;
+            player.a = 3.2;
+            player.fov = M_PI/3.;
+            player.turn = 0;
+            player.walk = 0;
+            render(gw, map, player, sprites, tex_walls, tex_monst);
+        }
+
         SDL_UpdateTexture(framebuffer_texture, NULL, reinterpret_cast<void *>(gw.img.data()), gw.w*4);
 
         SDL_RenderClear(renderer);
